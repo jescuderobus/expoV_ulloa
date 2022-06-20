@@ -1,0 +1,425 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+	<script type="text/javascript"
+		src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+	<link rel="stylesheet" media="screen"
+		href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<script type="text/javascript" src="../extras/jquery.min.1.7.js"></script>
+	<script type="text/javascript" src="../extras/jquery-ui-1.8.20.custom.min.js"></script>
+	<script type="text/javascript" src="../extras/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="../extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="../lib/hash.js"></script>
+	<script src="https://kit.fontawesome.com/65fc940331.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/docs.css">
+	<script type="text/javascript">
+		$(function () {
+			$("a[class='Update']").click(function () {
+				$("#MyPopup").modal("show");
+				return false;
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<nav class="main-navbar">
+		<ul class="navbar-container">
+			<li class="logo">
+				<a href="#" class="navbar-link">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="qrcode" class="fa-primary"
+						role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+						<path fill="currentColor"
+							d="M144 32C170.5 32 192 53.49 192 80V176C192 202.5 170.5 224 144 224H48C21.49 224 0 202.5 0 176V80C0 53.49 21.49 32 48 32H144zM128 96H64V160H128V96zM144 288C170.5 288 192 309.5 192 336V432C192 458.5 170.5 480 144 480H48C21.49 480 0 458.5 0 432V336C0 309.5 21.49 288 48 288H144zM128 352H64V416H128V352zM256 80C256 53.49 277.5 32 304 32H400C426.5 32 448 53.49 448 80V176C448 202.5 426.5 224 400 224H304C277.5 224 256 202.5 256 176V80zM320 160H384V96H320V160zM352 448H384V480H352V448zM448 480H416V448H448V480zM416 288H448V416H352V384H320V480H256V288H352V320H416V288z">
+						</path>
+					</svg>
+					<span class="link-text"></span>
+				</a>
+			</li>
+			<li class="navbar-item">
+				<a href="#" class="navbar-link">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="indent" class="fa-primary"
+						role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+						<path fill="currentColor"
+							d="M27.31 363.3l96-96a16 16 0 0 0 0-22.62l-96-96C17.27 138.66 0 145.78 0 160v192c0 14.31 17.33 21.3 27.31 11.3zM432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm3.17-128H204.83A12.82 12.82 0 0 0 192 300.83v38.34A12.82 12.82 0 0 0 204.83 352h230.34A12.82 12.82 0 0 0 448 339.17v-38.34A12.82 12.82 0 0 0 435.17 288zm0-128H204.83A12.82 12.82 0 0 0 192 172.83v38.34A12.82 12.82 0 0 0 204.83 224h230.34A12.82 12.82 0 0 0 448 211.17v-38.34A12.82 12.82 0 0 0 435.17 160zM432 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z">
+						</path>
+					</svg>
+					<span class="link-text">link 2</span>
+				</a>
+			</li>
+			<li class="navbar-item">
+				<a href="#" class="navbar-link" onclick="togglePopup()">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book-reader"
+						class="fa-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path fill="currentColor"
+							d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z">
+						</path>
+					</svg>
+					<span class="link-text">link 1</span>
+				</a>
+			</li>
+			<li class="navbar-item">
+				<a href="#" class="navbar-link" onclick="togglePopup2()">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="qrcode" class="fa-primary"
+						role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+						<path fill="currentColor"
+							d="M144 32C170.5 32 192 53.49 192 80V176C192 202.5 170.5 224 144 224H48C21.49 224 0 202.5 0 176V80C0 53.49 21.49 32 48 32H144zM128 96H64V160H128V96zM144 288C170.5 288 192 309.5 192 336V432C192 458.5 170.5 480 144 480H48C21.49 480 0 458.5 0 432V336C0 309.5 21.49 288 48 288H144zM128 352H64V416H128V352zM256 80C256 53.49 277.5 32 304 32H400C426.5 32 448 53.49 448 80V176C448 202.5 426.5 224 400 224H304C277.5 224 256 202.5 256 176V80zM320 160H384V96H320V160zM352 448H384V480H352V448zM448 480H416V448H448V480zM416 288H448V416H352V384H320V480H256V288H352V320H416V288z">
+						</path>
+					</svg>
+					<span class="link-text">link 3</span>
+				</a>
+			</li>
+			<li class="navbar-item">
+				<a href="#" class="navbar-link" onclick="Close_book();">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times-circle"
+						class="fa-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path fill="currentColor"
+							d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z">
+						</path>
+					</svg>
+					<path fill="currentColor"
+						d="M144 32C170.5 32 192 53.49 192 80V176C192 202.5 170.5 224 144 224H48C21.49 224 0 202.5 0 176V80C0 53.49 21.49 32 48 32H144zM128 96H64V160H128V96zM144 288C170.5 288 192 309.5 192 336V432C192 458.5 170.5 480 144 480H48C21.49 480 0 458.5 0 432V336C0 309.5 21.49 288 48 288H144zM128 352H64V416H128V352zM256 80C256 53.49 277.5 32 304 32H400C426.5 32 448 53.49 448 80V176C448 202.5 426.5 224 400 224H304C277.5 224 256 202.5 256 176V80zM320 160H384V96H320V160zM352 448H384V480H352V448zM448 480H416V448H448V480zM416 288H448V416H352V384H320V480H256V288H352V320H416V288z">
+					</path>
+					</svg>
+					<span class="link-text">link 3</span>
+				</a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<div class="popup" id="popup-1">
+		<div class="overlay"></div>
+		<div class="content">
+			<div class="close-btn" onclick="togglePopup()">&times;</div>
+
+			<h1>Ejemplo</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquam et officiis. Magnam magni
+				maxime asperiores unde doloribus similique et tempore iste beatae reiciendis quis explicabo consectetur,
+				itaque sapiente error esse ipsum tempora deleniti laudantium ab dolorum nihil rerum neque. Repellat,
+				tenetur exercitationem. Perspiciatis unde dolor facere aut inventore ab ut? Eligendi itaque neque
+				ratione quas debitis repellendus corrupti aliquam aperiam saepe laborum facilis aut necessitatibus
+				deleniti at sapiente deserunt hic similique nemo voluptates ducimus cum quia, nesciunt nulla? Deleniti
+				dolore illo accusantium, ex, fugiat exercitationem beatae voluptates est corporis culpa dignissimos.
+				Similique eligendi distinctio possimus eaque odio quos modi iste maiores soluta nam dicta assumenda
+				doloremque sed, ducimus eius esse quas exercitationem blanditiis impedit asperiores? </p>
+				<p>Consequatur excepturi quisquam ad magnam maxime assumenda ullam odit, sint optio necessitatibus perferendis cum,
+				soluta consectetur? Amet, similique. Dolorum, nulla. Quibusdam ducimus itaque tempore quaerat earum
+				neque eius natus quos commodi fuga recusandae dolore temporibus aliquam laboriosam iste deleniti sed,
+				qui cum? Nihil delectus mollitia saepe facere sunt eum deserunt animi aspernatur error veniam, quam
+				laudantium eaque temporibus ipsa dolore. Deserunt quia expedita non in nihil, magnam id autem nostrum
+				nam vel repellat possimus blanditiis facilis quasi ratione corporis illum! Voluptatibus eos quia ducimus
+				qui, nihil accusantium voluptas molestias ipsa minus ut sapiente voluptates velit saepe ab! Ipsam autem
+				ullam voluptates distinctio ea tempore sunt! Facilis dolorem ab magnam dolores deleniti rem provident,
+				pariatur sed nulla soluta at, ut natus velit obcaecati eaque repellendus. Asperiores tempore maiores
+				quaerat illo eius aut quia labore aspernatur earum, harum iusto dolor numquam maxime repudiandae, illum
+				delectus possimus porro quam voluptate molestias, architecto dolorum corrupti nostrum reiciendis.</p>
+				<p> sed cum ducimus harum quos a quisquam magnam laudantium natus officia velit quas eligendi
+				nostrum sequi! Suscipit qui beatae dignissimos, earum voluptas vero tempore quod vel sapiente assumenda
+				deleniti minus est repellendus autem quas necessitatibus quia dolorum natus voluptatibus nulla? Nostrum
+				repellendus libero ducimus odio, dignissimos molestias eveniet id laudantium quia recusandae asperiores
+				facilis magni quos illum. Recusandae aliquid praesentium amet facere laudantium fugiat rem. Beatae
+				provident dignissimos consequuntur minus, porro placeat vero culpa reiciendis? Impedit ab,
+				necessitatibus natus dignissimos fugiat eligendi, voluptatem explicabo porro itaque facilis, autem fuga
+				possimus ducimus a repellendus molestias. Qui incidunt cumque doloribus quia dolore minus possimus
+				tenetur illo consequuntur distinctio ipsum, reiciendis commodi cupiditate velit sed dicta voluptatum,
+				odio placeat. Temporibus repellendus nam vel inventore alias debitis voluptatum deleniti quo esse.
+				Nulla, ullam nobis rem impedit quisquam atque blanditiis exercitationem assumenda dolorem dolor deserunt
+				omnis aut alias praesentium perspiciatis id minima temporibus iusto vero tempora autem. Non adipisci,
+				odit optio et deserunt molestiae qui necessitatibus libero nostrum nulla quam illum. Laboriosam quam
+				eligendi nesciunt odit non veritatis, praesentium similique voluptatum vero dignissimos dicta facilis?
+				Enim possimus necessitatibus vel vitae magni! Minus, ex voluptas explicabo quasi ea autem magni eligendi
+				at, vitae iste laudantium veritatis recusandae sit voluptatem saepe mollitia? Fuga sint, fugit unde ad
+				architecto cumque non, soluta velit nihil, voluptatem consectetur. Autem laboriosam consequuntur labore
+				ea sint praesentium minima, aperiam voluptatum dolor accusamus.</p>
+		</div>
+	</div>
+	<div class="popup" id="popup-2">
+		<div class="overlay"></div>
+		<div class="content">
+			<div class="close-btn" onclick="togglePopup2()">&times;</div>
+			<img src="pics/qr.jpg" class="qr" alt="Código QR">
+		</div>
+	</div>
+
+	<div class="space">
+
+	</div>
+
+	<div id="canvas">
+		<div id="book-zoom">
+			<div class="sample-docs">
+				<!--<div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div>-->
+				<div class="hard"></div>
+				<div class="hard"></div>
+				<div class="hard p29"></div>
+				<div class="hard p30"></div>
+			</div>
+		</div>
+
+
+		<div id="slider-bar" class="turnjs-slider" style="margin-top: 100px;">
+			<div id="slider"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		function togglePopup() {
+			document.getElementById("popup-1").classList.toggle("active");
+		}
+		function togglePopup2() {
+			document.getElementById("popup-2").classList.toggle("active");
+		}
+
+
+		function Close_book() {
+			location.href = "../../index.html";
+
+		}
+
+		function loadApp() {
+
+			var flipbook = $('.sample-docs');
+
+			// Check if the CSS was already loaded
+
+			if (flipbook.width() == 0 || flipbook.height() == 0) {
+				setTimeout(loadApp, 10);
+				return;
+			}
+
+			// Mousewheel
+
+			$('#book-zoom').mousewheel(function (event, delta, deltaX, deltaY) {
+
+				var data = $(this).data(),
+					step = 30,
+					flipbook = $('.sample-docs'),
+					actualPos = $('#slider').slider('value') * step;
+
+				if (typeof (data.scrollX) === 'undefined') {
+					data.scrollX = actualPos;
+					data.scrollPage = flipbook.turn('page');
+				}
+
+				data.scrollX = Math.min($("#slider").slider('option', 'max') * step,
+					Math.max(0, data.scrollX + deltaX));
+
+				var actualView = Math.round(data.scrollX / step),
+					page = Math.min(flipbook.turn('pages'), Math.max(1, actualView * 2 - 2));
+
+				if ($.inArray(data.scrollPage, flipbook.turn('view', page)) == -1) {
+					data.scrollPage = page;
+					flipbook.turn('page', page);
+				}
+
+				if (data.scrollTimer)
+					clearInterval(data.scrollTimer);
+
+				data.scrollTimer = setTimeout(function () {
+					data.scrollX = undefined;
+					data.scrollPage = undefined;
+					data.scrollTimer = undefined;
+				}, 1000);
+
+			});
+
+			// Slider
+
+			$("#slider").slider({
+				min: 1,
+				max: 100,
+
+				start: function (event, ui) {
+					if (!window._thumbPreview) {
+						_thumbPreview = $('<div />', { 'class': 'thumbnail' }).html('<div></div>');
+						setPreview(ui.value);
+						_thumbPreview.appendTo($(ui.handle));
+					} else
+						setPreview(ui.value);
+
+					moveBar(false);
+				},
+
+				slide: function (event, ui) {
+					setPreview(ui.value);
+				},
+
+				stop: function () {
+					if (window._thumbPreview)
+						_thumbPreview.removeClass('show');
+
+					$('.sample-docs').turn('page', Math.max(1, $(this).slider('value') * 2 - 2));
+				}
+			});
+
+
+			// URIs
+
+			Hash.on('^page\/([0-9]*)$', {
+				yep: function (path, parts) {
+					var page = parts[1];
+
+					if (page !== undefined) {
+						if ($('.sample-docs').turn('is'))
+							$('.sample-docs').turn('page', page);
+					}
+
+				},
+				nop: function (path) {
+
+					if ($('.sample-docs').turn('is'))
+						$('.sample-docs').turn('page', 1);
+				}
+			});
+
+			// Arrows
+
+			$(document).keydown(function (e) {
+
+				var previous = 37, next = 39;
+
+				switch (e.keyCode) {
+					case previous:
+
+						$('.sample-docs').turn('previous');
+
+						break;
+					case next:
+
+						$('.sample-docs').turn('next');
+
+						break;
+				}
+
+			});
+
+			// Create the flipbook
+
+			flipbook.turn({
+
+				elevation: 50,
+				acceleration: false,
+				gradients: true,
+				autoCenter: true,
+				duration: 1000,
+				pages: 30,
+				when: {
+
+					turning: function (e, page, view) {
+
+						var book = $(this),
+							currentPage = book.turn('page'),
+							pages = book.turn('pages');
+
+						if (currentPage > 3 && currentPage < pages - 3) {
+							if (page == 1) {
+								book.turn('page', 2).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							} else if (page == pages) {
+								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							}
+						} else if (page > 3 && page < pages - 3) {
+							if (currentPage == 1) {
+								book.turn('page', 2).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							} else if (currentPage == pages) {
+								book.turn('page', pages - 1).turn('stop').turn('page', page);
+								e.preventDefault();
+								return;
+							}
+						}
+
+						Hash.go('page/' + page).update();
+
+						if (page == 1 || page == pages)
+							$('.sample-docs .tabs').hide();
+
+
+					},
+
+					turned: function (e, page, view) {
+
+						var book = $(this);
+
+						$('#slider').slider('value', getViewNumber(book, page));
+
+						if (page != 1 && page != book.turn('pages'))
+							$('.sample-docs .tabs').fadeIn(500);
+						else
+							$('.sample-docs .tabs').hide();
+
+						book.turn('center');
+						updateTabs();
+
+					},
+
+					start: function (e, pageObj) {
+
+						moveBar(true);
+
+					},
+
+					end: function (e, pageObj) {
+
+						var book = $(this);
+
+						setTimeout(function () {
+							$('#slider').slider('value', getViewNumber(book));
+						}, 1);
+
+						moveBar(false);
+
+					},
+
+					missing: function (e, pages) {
+
+						for (var i = 0; i < pages.length; i++)
+							addPage(pages[i], $(this));
+
+					}
+				}
+			}).turn('page', 2);
+
+
+			$('#slider').slider('option', 'max', numberOfViews(flipbook));
+
+			flipbook.addClass('animated');
+
+
+			// Show canvas
+
+			$('#canvas').css({ visibility: 'visible' });
+		}
+
+		// Hide canvas
+
+		$('#canvas').css({ visibility: 'hidden' });
+
+		yepnope({
+			test: Modernizr.csstransforms,
+			yep: ['../lib/turn.min.js', 'css/jquery.ui.css'],
+			nope: ['../lib/turn.html4.min.js', 'css/jquery.ui.html4.css'],
+			both: ['css/docs.css', 'js/docs.js'],
+			complete: loadApp
+		});
+
+	</script>
+
+</body>
+
+</html>

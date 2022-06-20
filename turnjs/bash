@@ -1,0 +1,5 @@
+Para crear un libro con páginas de prueba
+
+for i in `seq 1 28`; do convert input.png  -fill black -pointsize 80 -annotate +250+250 $i png8:$(printf %d $i).png ; done
+
+
